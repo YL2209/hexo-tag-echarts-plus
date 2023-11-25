@@ -36,7 +36,7 @@ tag_echarts:
   |CDN.tag_echarts_js|URL|【可选】echarts标签的JS依赖，为避免CDN缓存延迟，建议将@latest改为具体版本号|
 
 ## Echarts外挂标签文档
-1. [Tag Echarts](https://naokuo.top/posts/336fb21e/)
+1. [Tag Echarts Dome](https://naokuo.top/posts/336fb21e/)
 
 2. Echarts [官方实例](https://echarts.apache.org/handbook/zh/get-started/)
 
