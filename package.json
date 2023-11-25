@@ -1,0 +1,31 @@
+{
+  "name": "hexo-tag-echarts-plus",
+  "version": "2.0.0",
+  "description": "A simple plugin for inserting ECharts5.x by using tags in Hexo.",
+  "main": "index.js",
+  "scripts": {
+    "eslint": "eslint ."
+  },
+  "directories": {
+    "lib": "./lib"
+  },
+  "files": [
+    "lib/",
+    "index.js"
+  ],
+  "keywords": [
+    "hexo",
+    "tab_plugins",
+    "volantis",
+    "butterfly",
+    "theme-butterfly",
+    "plugins",
+    "echarts"
+  ],
+  "author": "naokuo",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YL2209/hexo-tag-echarts-plus.git"
+  }
+}
