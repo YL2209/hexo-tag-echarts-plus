@@ -22,7 +22,7 @@ npm install hexo-tag-echarts-plus --save
 # see https://naokuo.top/posts/336fb21e/
 tag_echarts:
   enable: true # 开关
-  priority: 5 #过滤器优先权
+  priority: 10 #过滤器优先权
   CDN:
     tag_echarts_js: https://npm.elemecdn.com/echarts@5.4.3/dist/echarts.min.js
 ```
@@ -40,5 +40,11 @@ tag_echarts:
 
 2. Echarts [官方实例](https://echarts.apache.org/handbook/zh/get-started/)
 
+## 更新记录
+- 2023-11-25(v3.0.0):
+  增加页面宽度自适应[参考文档](https://juejin.cn/post/6976483868689825805)
+  增加完全自定义参数内容
 
-
+## 已知问题
+1. pjax存在兼容问题
+2. 一些存在图表兼容问题

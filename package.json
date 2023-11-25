@@ -1,6 +1,6 @@
 {
   "name": "hexo-tag-echarts-plus",
-  "version": "2.0.2",
+  "version": "3.0.0",
   "description": "A simple plugin for inserting ECharts5.x by using tags in Hexo.",
   "main": "index.js",
   "scripts": {
