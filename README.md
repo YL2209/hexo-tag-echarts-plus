@@ -1,6 +1,6 @@
 # hexo-tag-echarts-plus
 
-[![npm](https://unpkg.com/hexo-tag-echarts-plus@3.1.0/lib/assets/hexo-tag-echarts-plus.svg)]() 
+[![npm](https://unpkg.com/hexo-tag-echarts-plus@3.5.0/lib/assets/hexo-tag-echarts-plus.svg)]() 
 
 本插件基于[Konwbase](https://github.com/knowiki)的[hexo-tag-echarts4](https://github.com/knowiki/hexo-tag-echarts4)修改。
 
@@ -44,6 +44,9 @@ tag_echarts:
 - 2023-11-25(v3.0.0):
   - 增加页面宽度自适应[参考文档](https://juejin.cn/post/6976483868689825805)
   - 增加完全自定义参数内容
+- 2023-11-26(v3.5.0):
+  - 增加JavaScript 严格模式(use strict)
+  - 取消myChart的随机数id
 
 ## 已知问题
 1. pjax存在兼容问题
