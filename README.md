@@ -48,7 +48,7 @@ tag_echarts:
 - 2023-11-26(v3.5.0):
   - 增加JavaScript 严格模式(use strict)
   - 取消myChart的随机数id
-- 2023-11-26(v3.6.0):
+- 2023-11-30(v3.6.0):
   - 使用IntersectionObserver API实现懒加载
   - 使用ResizeObserver API实现宽度自适应
   
