@@ -14,7 +14,7 @@ hexo.extend.filter.register('after_generate', function (locals) {
   }
   //cdn资源声明
   //head引入资源
-  const echarts_js = `<script async src="${data.echartsCDN}"></script><script async src="${data.lazyloadCDN}"></script>`
+  const echarts_js = `<script async src="${data.echartsCDN}"></script><script src="${data.lazyloadCDN}"></script>`
   // 注入脚本资源
   if (data.echartsCDN) {
     hexo.extend.injector.register('head_begin', echarts_js, "default")

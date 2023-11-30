@@ -7,3 +7,7 @@ npm version patch
 # 推送至github触发action
 git push
 ```
+
+```bash
+npm publish
+```
