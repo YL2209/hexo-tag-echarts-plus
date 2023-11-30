@@ -1,6 +1,6 @@
 # hexo-tag-echarts-plus
 
-[![npm](https://unpkg.com/hexo-tag-echarts-plus@3.5.0/lib/assets/hexo-tag-echarts-plus.svg)]() 
+[![npm](https://unpkg.com/hexo-tag-echarts-plus@3.6.0/lib/assets/hexo-tag-echarts-plus.svg)]() 
 
 本插件基于[Konwbase](https://github.com/knowiki)的[hexo-tag-echarts4](https://github.com/knowiki/hexo-tag-echarts4)修改。
 
@@ -22,9 +22,10 @@ npm install hexo-tag-echarts-plus --save
 # see https://naokuo.top/posts/336fb21e/
 tag_echarts:
   enable: true # 开关
-  priority: 10 #过滤器优先权
+  priority: 5 #过滤器优先权
   CDN:
     tag_echarts_js: https://npm.elemecdn.com/echarts@5.4.3/dist/echarts.min.js
+    echarts_lazyload_js: https://unpkg.com/hexo-tag-echarts-plus@latest/lib/scripts/naokuo_package.js
 ```
 
 3. 参数释义
@@ -47,7 +48,10 @@ tag_echarts:
 - 2023-11-26(v3.5.0):
   - 增加JavaScript 严格模式(use strict)
   - 取消myChart的随机数id
-
+- 2023-11-26(v3.6.0):
+  - 使用IntersectionObserver API实现懒加载
+  - 使用ResizeObserver API实现宽度自适应
+  
 ## 已知问题
 1. pjax存在兼容问题
 2. 一些存在图表兼容问题
