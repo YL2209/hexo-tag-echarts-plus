@@ -42,7 +42,7 @@ function echartsMaps(args, content) {
     result += '' + content + '';
   } else {
     result += '<div id="echarts_' + Id + '" style="width: ' + Width + ' ;height: ' + Height + 'px;"></div>';
-    result += '<script async="async">';
+    result += '<script async data-pjax>';
     result += '!function () {';
     result += '  "use strict";';
     result += '  const GetID = document.getElementById("echarts_' + Id + '");';
