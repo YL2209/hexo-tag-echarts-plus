@@ -1,6 +1,6 @@
 # hexo-tag-echarts-plus
 
-[![npm](https://unpkg.com/hexo-tag-echarts-plus@3.6.3/lib/assets/hexo-tag-echarts-plus.svg)]() 
+[![npm](https://unpkg.com/hexo-tag-echarts-plus@3.6.4/lib/assets/hexo-tag-echarts-plus.svg)]() 
 
 本插件基于[Konwbase](https://github.com/knowiki)的[hexo-tag-echarts4](https://github.com/knowiki/hexo-tag-echarts4)修改。
 
@@ -25,7 +25,7 @@ tag_echarts:
   priority: 5 #过滤器优先权
   CDN:
     tag_echarts_js: https://npm.elemecdn.com/echarts@5.4.3/dist/echarts.min.js
-    echarts_lazyload_js: https://unpkg.com/hexo-tag-echarts-plus@latest/lib/scripts/naokuo_package.js
+    echarts_lazyload_js: https://unpkg.com/hexo-tag-echarts-plus@3.6.4/lib/scripts/naokuo_package.js
 ```
 
 3. 参数释义

@@ -9,12 +9,12 @@ hexo.extend.filter.register('after_generate', function (locals) {
   if (!(config && config.enable)) return
   // 集体声明配置项
   const data = {
-    echartsCDN: config.CDN.tag_echarts_js ? urlFor(config.CDN.tag_echarts_js) : 'https://npm.elemecdn.com/echarts@5.4.3/dist/echarts.min.js',
+    echartsCDN: config.CDN.tag_echarts_js ? urlFor(config.CDN.tag_echarts_js) : 'https://npm.elemecdn.com/echarts@latest/dist/echarts.min.js',
     lazyloadCDN: config.CDN.echarts_lazyload_js ? urlFor(config.CDN.echarts_lazyload_js) : 'https://unpkg.com/hexo-tag-echarts-plus@latest/lib/scripts/naokuo_package.js'
   }
   //cdn资源声明
   //head引入资源
-  const echarts_js = `<script async src="${data.echartsCDN}"></script><script src="${data.lazyloadCDN}"></script>`
+  const echarts_js = `<script async src="${data.echartsCDN}"></script><script async src="${data.lazyloadCDN}"></script>`
   // 注入脚本资源
   if (data.echartsCDN) {
     hexo.extend.injector.register('head_begin', echarts_js, "default")
@@ -29,6 +29,8 @@ hexo.extend.filter.register('after_generate', function (locals) {
   })
 )
 
+const { escapeDiacritic } = require('hexo-util')
+
 function echartsMaps(args, content) {
   args = args.join(' ').split(',')
   const Id = ((Math.random() * 9999) | 0)
@@ -39,24 +41,23 @@ function echartsMaps(args, content) {
   // 布局
   let result = '';
   if (Width == 'diy') {
-    result += '' + content + '';
+    result += `${escapeDiacritic(content)}`;
   } else {
-    result += '<div id="echarts_' + Id + '" style="width: ' + Width + ' ;height: ' + Height + 'px;"></div>';
-    result += '<script async data-pjax>';
-    result += '!function () {';
-    result += '  "use strict";';
-    result += '  const GetID = document.getElementById("echarts_' + Id + '");';
-    result += '  function naokuo_lazyLoad() {';
-    result += '    var myChart = echarts.init(GetID,' + Mode + ', { renderer: \'' + Renderer + '\' });';
-    result += '    var option;';
-    result += '    ' + content + '';
-    result += '    option && myChart.setOption(option);';
-    result += '    console.log("echarts加载成功_' + Id + '");';
-    result += '    naokuoResize(myChart.resize,GetID,2500);';
-    result += '  };';
-    result += '  naokuoIntersection(naokuo_lazyLoad, GetID);';
-    result += '}();';
-    result += '</script>';
+    result += `<div id="echarts_${Id}" style="width:${Width};height:${Height}px;"></div>`;
+    result += `<script async data-pjax>`;
+    result += `!function () {`;
+    result += `  "use strict";`;
+    result += `  const GetID = document.getElementById("echarts_${Id}");`;
+    result += `  function naokuo_lazyLoad() {`;
+    result += `    var myChart = echarts.init(GetID,${Mode}, { renderer: '${Renderer}' });`;
+    result += `    var option;`;
+    result += `    ${escapeDiacritic(content)}`;
+    result += `    option && myChart.setOption(option);`;
+    result += `    naokuo.resizeObserver(myChart.resize,GetID,2500);`;
+    result += `  };`;
+    result += `  naokuo.intersectionObserver(naokuo_lazyLoad, GetID);`;
+    result += `}();`;
+    result += `</script>`;
   }
   return result;
 }
